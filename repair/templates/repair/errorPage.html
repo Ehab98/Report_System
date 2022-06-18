@@ -1,0 +1,124 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Issues tracking System |Ehab Reda</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+	{% load static %}
+	
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+	<link rel="icon" type="image/x-icon" href="{% static 'img/logos.jpg' %}">
+	<style type="text/css">
+		.content {
+			justify-content: center;
+			align-items: center;
+			align-self: center;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<header style="font-family: Lucida Handwriting; color: yellow">
+		<h2>Issues and Problem tracking System | Dev/Ehab Reda</h2><br><br>
+		<a href="/repair">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Home</h3>
+			</section>
+		</a>
+		<a href="/repair/updateRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Update</h3>
+			</section>
+		</a>
+		<a href="/repair/pendingRepairRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Pending</h3>
+			</section>
+		</a>
+		<a href="/repair/checkStatusRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Check</h3>
+			</section>
+		</a>
+	</header>
+		<section class="content" style="background: url({% static 'img/3.jpg' %}) no-repeat center; background-size: contain;">
+			<section class="formContainer" style="margin-top: 0px;">
+				<br><br><br><br><br>
+				<h1>{{ errorMessage }}</h1>
+				{% if button %}
+					<br><br>
+					<input type="button" value="{{ buttonText }}" onclick="window.location.replace('{{ button }}')">
+				{% endif %}
+				<br><br><br><br><br>
+			</section>
+		</section>
+
+</body>
+
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Issues tracking System |Ehab Reda</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+	{% load static %}
+	
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+	<link rel="icon" type="image/x-icon" href="{% static 'img/logos.jpg' %}">
+	<style type="text/css">
+		.content {
+			justify-content: center;
+			align-items: center;
+			align-self: center;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<header style="font-family: Lucida Handwriting; color: yellow">
+		<h2>Issues and Problem tracking System | Dev/Ehab Reda</h2><br><br>
+		<a href="/repair">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Home</h3>
+			</section>
+		</a>
+		<a href="/repair/updateRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Update</h3>
+			</section>
+		</a>
+		<a href="/repair/pendingRepairRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Pending</h3>
+			</section>
+		</a>
+		<a href="/repair/checkStatusRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Check</h3>
+			</section>
+		</a>
+	</header>
+		<section class="content" style="background: url({% static 'img/3.jpg' %}) no-repeat center; background-size: contain;">
+			<section class="formContainer" style="margin-top: 0px;">
+				<br><br><br><br><br>
+				<h1>{{ errorMessage }}</h1>
+				{% if button %}
+					<br><br>
+					<input type="button" value="{{ buttonText }}" onclick="window.location.replace('{{ button }}')">
+				{% endif %}
+				<br><br><br><br><br>
+			</section>
+		</section>
+
+</body>
+
+>>>>>>> 82835c48c97b5622541c6cb9e52efcec4ece4bb2
+</html>

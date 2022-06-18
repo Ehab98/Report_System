@@ -1,0 +1,505 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Repair System</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+	{% load static %}
+	
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+	<link rel="icon" type="image/x-icon" href="{% static 'img/logos.jpg' %}">
+
+	<style type="text/css">
+		.contentColumn{
+			display: flex;
+			/* flex-wrap: wrap; */
+			
+			flex-direction: column;
+			justify-content: flex-start;
+
+			text-align: center;
+			align-self: center;
+			align-items: center;
+
+			position: relative;
+
+			min-width: 100%;
+			max-width: 100%;
+			min-height: 100vh;
+			max-height: 100vh;
+			background: #F4F4F4;
+
+			text-align: center;
+		}
+
+		.details{
+			background: #E6E9EC;
+			border-radius: 0.4em;
+		}
+
+		.listContainer{
+			min-width: 60%;
+			max-width: 60%;
+			
+			margin-top: 755px;
+			margin-bottom: 110px;
+			padding: 10px;
+
+			background-color: white;
+			
+			border-radius: 0.3em;
+			box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+		  	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+		  	animation-duration: .75s;
+		  	animation-name: fadeInUp;
+		  	transform-origin: center bottom;
+		}
+
+		table {
+			text-align: center;
+			border-radius: 0.4em;
+			min-width: 93%;
+			max-width: 93%;
+
+			font-family: 'gotham rounded light';
+		}
+
+		table th {
+			background: rgba(225,225,225,1);
+			font-family: 'gotham rounded book';
+			padding: 5px;
+			padding-top: 7px;
+			padding-bottom: 7px;
+		}
+
+		table tr {
+			border-bottom: 1px lightgrey solid;
+			background: rgba(240,240,240,1);
+		}
+		table td {
+			padding: 5px;
+		}
+
+		table tr:hover {
+			background: rgba(235,235,235,1);
+			border-bottom: 0px lightgrey solid;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<header style="font-family: Lucida Handwriting; color: yellow">
+		<h2>Issues and Problem tracking System | Dev/Ehab Reda</h2><br><br>
+		<a href="/repair">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Home</h3>
+			</section>
+		</a>
+		<a href="/repair/updateRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Update</h3>
+			</section>
+		</a>
+		<a href="/repair/pendingRepairRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Pending</h3>
+			</section>
+		</a>
+		<a href="/repair/checkStatusRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Check</h3>
+			</section>
+		</a>
+	</header>
+
+	<section class="contentColumn" id='content' style="background: url({% static 'img/new.jpg' %}) no-repeat center; background-size: contain;">
+		<section class="formContainer" style="margin-top: 100px; margin-bottom: 20px; font-family: gotham rounded book; max-width: 60%; min-width: 60%; padding: 2%;">
+			<h1>Update Details</h1>
+		</section>
+		<section class="formContainer" style="margin-top: 0px; margin-bottom: 20px; font-family: gotham rounded book; max-width: 60%; min-width: 60%; padding: 2%;">
+			<br>
+				{% for i in customerDetails %}
+				<section style="display: flex;">
+					<section style="max-width:20%; min-width: 20%; text-align: left;">
+						<p><b>Receipt ID :</b> <b>{{ i.receiptID }}</b></p>						
+					</section>
+					<section style="max-width:40%; min-width: 40%; text-align: left;">
+						<p><b>Status : </b>
+							{% if "EN" == i.status %}
+								<font color="red">Enquired</font>
+							{% endif %}
+							{% if "CH" ==  i.status %}
+								<font color="#FFCC00">Checked</font>
+							{% endif %}
+							{% if "RE" ==  i.status %}
+								<font color="Green">Repaired</font>
+							{% endif %}
+							{% if "CO" == i.status %}
+								<font color="blue">Completed</font>
+							{% endif %} 
+						</p>
+
+						</b></p>						
+					</section>
+					<section style="max-width:40%; min-width: 40%; text-align: left;">					
+						<p><b>Enquiry Date : </b>{{ i.enquiryDate }}</p>					
+					</section>
+				</section>
+				<br>
+				<section style="display: flex; max-width: 100%; min-width: 100;">
+					<section style="max-width: 60%; min-width: 60%; text-align: left;">
+						<p style="font-size: 35px;"><b>{{ i.customerName }}</b></p>
+						<br>
+						<section style="min-width: 100%; max-width: 100%; display: flex; flex-direction: column;">
+							<section style="max-width: 100%; min-width: 100%; text-align: left;">
+								<p><b>Serial No. : </b>{{ i.serialNo }}</p>
+							</section>
+						</section>
+					</section>
+					<section style="max-width: 40%; min-width: 40%; display: flex; flex-direction: column; flex-wrap: wrap;">
+						<h4 style="text-align:left; margin-bottom: 5px;">Contact Details : </h4>
+						<section style="margin-left: 13px;">
+							<section style="max-width: 100%; min-width: 100%; text-align: left;">
+								<p style="font-size: 15px;">{{ i.contactNo }}</p>
+							</section>
+
+							<section style="max-width: 100%; min-width: 100%; text-align: left;">
+								<p>{{ i.address }}</p>
+							</section>
+						</section>
+					</section>
+				</section>
+				<br>
+				<section style="min-width: 100%; max-width: 100%; display: flex;">
+					<section style="min-width: 60%; max-width: 60%; text-align: left;">
+						<p><b>Problem : </b>{{ i.problem }}</p>
+					</section>
+					<section style="min-width: 40%; max-width: 40%; text-align: left;">
+						<p><b>Problem Category : </b>
+							{% if "HW" == i.problemCategory %}
+								Hardware
+							{% endif %}
+							{% if "SW" == i.problemCategory %}
+								Software
+							{% endif %}
+						</p>
+					</section>
+				</section>
+				<br>
+				<section style="min-width: 100%; max-width: 100%; display: flex; text-align: left;">
+					<p><b>Problem Description : </b>{{ i.problemDescription }}</p>
+				</section>
+				<br>
+				<section style="min-width: 100%; max-width: 100%; display: flex; text-align: left;">
+					<p><b>Device Condition : </b>{{ i.deviceCondition }}</p>
+				</section>
+				
+			    {% endfor %}
+			<br>
+		</section>
+		{% comment %} {% if testDetails %}
+			<section class="formContainer" style="margin-top: 0px; font-family: gotham rounded book; max-width: 60%; min-width: 60%; padding: 2%; margin-bottom: 25px;">
+				<section style="display: flex; max-width: 100%; min-width: 100;">
+					<section style="max-width: 100%; min-width: 100%; text-align: left;">
+						<p style="font-size: 35px;"><b>Actual Problem</b></p>
+						<br>
+							{% for i in testDetails%}
+								<p><b>Actual Problem :</b> {{ i.actualProblem }}</p>
+								<p><b>Actual Problem Description :</b> {{ i.actualProblemDescription }}</p>
+							{% endfor %}
+							
+					</section>
+					
+				</section>
+			</section> {% endcomment %}
+		{% comment %} {% if testDetails %} {% endcomment %}
+			<section class="formContainer" style="margin-top: 0px; margin-bottom: 50px; height: 100%;">
+				<form method="post" action="../updateTestDetails/">
+					{% csrf_token %}
+					{% for i in customerDetails %}
+					<input type="hidden" name="receiptID" value="{{ i.receiptID }}">
+					{% endfor %}
+					<select name="status" required>
+						
+						<option value="EN">Enquired</option>
+						<option value="CH">Checked</option>
+						<option value="RE">Repaired</option>
+						<option value="CO">Completed</option>
+						<option value="RJ">Rejected</option>
+					</select><br><br>
+					<input type="submit" value="Update Test Details"><br><br>
+				</form>
+			</section>
+		{% comment %} {% endif %} {% endcomment %}
+
+	
+					<input type="button" value="Generate Final Bill" onclick="window.location.replace('../finalReceipt?&receiptID={% for i in customerDetails %}{{ i.receiptID }}{% endfor %}')">
+				</section>
+			</section>
+		
+		
+
+	</section>
+
+
+</body>
+
+</html>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Repair System</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+	{% load static %}
+	
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+	<link rel="icon" type="image/x-icon" href="{% static 'img/logos.jpg' %}">
+
+	<style type="text/css">
+		.contentColumn{
+			display: flex;
+			/* flex-wrap: wrap; */
+			
+			flex-direction: column;
+			justify-content: flex-start;
+
+			text-align: center;
+			align-self: center;
+			align-items: center;
+
+			position: relative;
+
+			min-width: 100%;
+			max-width: 100%;
+			min-height: 100vh;
+			max-height: 100vh;
+			background: #F4F4F4;
+
+			text-align: center;
+		}
+
+		.details{
+			background: #E6E9EC;
+			border-radius: 0.4em;
+		}
+
+		.listContainer{
+			min-width: 60%;
+			max-width: 60%;
+			
+			margin-top: 755px;
+			margin-bottom: 110px;
+			padding: 10px;
+
+			background-color: white;
+			
+			border-radius: 0.3em;
+			box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+		  	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+		  	animation-duration: .75s;
+		  	animation-name: fadeInUp;
+		  	transform-origin: center bottom;
+		}
+
+		table {
+			text-align: center;
+			border-radius: 0.4em;
+			min-width: 93%;
+			max-width: 93%;
+
+			font-family: 'gotham rounded light';
+		}
+
+		table th {
+			background: rgba(225,225,225,1);
+			font-family: 'gotham rounded book';
+			padding: 5px;
+			padding-top: 7px;
+			padding-bottom: 7px;
+		}
+
+		table tr {
+			border-bottom: 1px lightgrey solid;
+			background: rgba(240,240,240,1);
+		}
+		table td {
+			padding: 5px;
+		}
+
+		table tr:hover {
+			background: rgba(235,235,235,1);
+			border-bottom: 0px lightgrey solid;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<header style="font-family: Lucida Handwriting; color: yellow">
+		<h2>Issues and Problem tracking System | Dev/Ehab Reda</h2><br><br>
+		<a href="/repair">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Home</h3>
+			</section>
+		</a>
+		<a href="/repair/updateRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Update</h3>
+			</section>
+		</a>
+		<a href="/repair/pendingRepairRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Pending</h3>
+			</section>
+		</a>
+		<a href="/repair/checkStatusRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Check</h3>
+			</section>
+		</a>
+	</header>
+
+	<section class="contentColumn" id='content' style="background: url({% static 'img/new.jpg' %}) no-repeat center; background-size: contain;">
+		<section class="formContainer" style="margin-top: 100px; margin-bottom: 20px; font-family: gotham rounded book; max-width: 60%; min-width: 60%; padding: 2%;">
+			<h1>Update Details</h1>
+		</section>
+		<section class="formContainer" style="margin-top: 0px; margin-bottom: 20px; font-family: gotham rounded book; max-width: 60%; min-width: 60%; padding: 2%;">
+			<br>
+				{% for i in customerDetails %}
+				<section style="display: flex;">
+					<section style="max-width:20%; min-width: 20%; text-align: left;">
+						<p><b>Receipt ID :</b> <b>{{ i.receiptID }}</b></p>						
+					</section>
+					<section style="max-width:40%; min-width: 40%; text-align: left;">
+						<p><b>Status : </b>
+							{% if "EN" == i.status %}
+								<font color="red">Enquired</font>
+							{% endif %}
+							{% if "CH" ==  i.status %}
+								<font color="#FFCC00">Checked</font>
+							{% endif %}
+							{% if "RE" ==  i.status %}
+								<font color="Green">Repaired</font>
+							{% endif %}
+							{% if "CO" == i.status %}
+								<font color="blue">Completed</font>
+							{% endif %} 
+						</p>
+
+						</b></p>						
+					</section>
+					<section style="max-width:40%; min-width: 40%; text-align: left;">					
+						<p><b>Enquiry Date : </b>{{ i.enquiryDate }}</p>					
+					</section>
+				</section>
+				<br>
+				<section style="display: flex; max-width: 100%; min-width: 100;">
+					<section style="max-width: 60%; min-width: 60%; text-align: left;">
+						<p style="font-size: 35px;"><b>{{ i.customerName }}</b></p>
+						<br>
+						<section style="min-width: 100%; max-width: 100%; display: flex; flex-direction: column;">
+							<section style="max-width: 100%; min-width: 100%; text-align: left;">
+								<p><b>Serial No. : </b>{{ i.serialNo }}</p>
+							</section>
+						</section>
+					</section>
+					<section style="max-width: 40%; min-width: 40%; display: flex; flex-direction: column; flex-wrap: wrap;">
+						<h4 style="text-align:left; margin-bottom: 5px;">Contact Details : </h4>
+						<section style="margin-left: 13px;">
+							<section style="max-width: 100%; min-width: 100%; text-align: left;">
+								<p style="font-size: 15px;">{{ i.contactNo }}</p>
+							</section>
+
+							<section style="max-width: 100%; min-width: 100%; text-align: left;">
+								<p>{{ i.address }}</p>
+							</section>
+						</section>
+					</section>
+				</section>
+				<br>
+				<section style="min-width: 100%; max-width: 100%; display: flex;">
+					<section style="min-width: 60%; max-width: 60%; text-align: left;">
+						<p><b>Problem : </b>{{ i.problem }}</p>
+					</section>
+					<section style="min-width: 40%; max-width: 40%; text-align: left;">
+						<p><b>Problem Category : </b>
+							{% if "HW" == i.problemCategory %}
+								Hardware
+							{% endif %}
+							{% if "SW" == i.problemCategory %}
+								Software
+							{% endif %}
+						</p>
+					</section>
+				</section>
+				<br>
+				<section style="min-width: 100%; max-width: 100%; display: flex; text-align: left;">
+					<p><b>Problem Description : </b>{{ i.problemDescription }}</p>
+				</section>
+				<br>
+				<section style="min-width: 100%; max-width: 100%; display: flex; text-align: left;">
+					<p><b>Device Condition : </b>{{ i.deviceCondition }}</p>
+				</section>
+				
+			    {% endfor %}
+			<br>
+		</section>
+		{% comment %} {% if testDetails %}
+			<section class="formContainer" style="margin-top: 0px; font-family: gotham rounded book; max-width: 60%; min-width: 60%; padding: 2%; margin-bottom: 25px;">
+				<section style="display: flex; max-width: 100%; min-width: 100;">
+					<section style="max-width: 100%; min-width: 100%; text-align: left;">
+						<p style="font-size: 35px;"><b>Actual Problem</b></p>
+						<br>
+							{% for i in testDetails%}
+								<p><b>Actual Problem :</b> {{ i.actualProblem }}</p>
+								<p><b>Actual Problem Description :</b> {{ i.actualProblemDescription }}</p>
+							{% endfor %}
+							
+					</section>
+					
+				</section>
+			</section> {% endcomment %}
+		{% comment %} {% if testDetails %} {% endcomment %}
+			<section class="formContainer" style="margin-top: 0px; margin-bottom: 50px; height: 100%;">
+				<form method="post" action="../updateTestDetails/">
+					{% csrf_token %}
+					{% for i in customerDetails %}
+					<input type="hidden" name="receiptID" value="{{ i.receiptID }}">
+					{% endfor %}
+					<select name="status" required>
+						
+						<option value="EN">Enquired</option>
+						<option value="CH">Checked</option>
+						<option value="RE">Repaired</option>
+						<option value="CO">Completed</option>
+						<option value="RJ">Rejected</option>
+					</select><br><br>
+					<input type="submit" value="Update Test Details"><br><br>
+				</form>
+			</section>
+		{% comment %} {% endif %} {% endcomment %}
+
+	
+					<input type="button" value="Generate Final Bill" onclick="window.location.replace('../finalReceipt?&receiptID={% for i in customerDetails %}{{ i.receiptID }}{% endfor %}')">
+				</section>
+			</section>
+		
+		
+
+	</section>
+
+
+</body>
+
+</html>
+>>>>>>> 82835c48c97b5622541c6cb9e52efcec4ece4bb2

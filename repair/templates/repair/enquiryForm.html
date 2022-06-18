@@ -1,0 +1,274 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Issues Tracking System | Ehab Reda</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+	{% load static %}
+	
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+	<link rel="icon" type="image/x-icon" href="{% static 'img/logos.jpg' %}">
+	<style>
+		.card_button{
+			max-width: 100px;
+			min-width: 100px;
+			max-height: 50px;
+			min-height: 50px;
+		
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			align-self: center;
+			align-items: flex-end;
+		
+			padding-bottom: 10px;
+		
+			color: white;
+			background: linear-gradient(45deg,#0601ff,#ffffff);
+		
+			border-radius: 0.3em;
+		
+			box-shadow: 0px 3px 6px rgba(0,0,0,0.16), 0px 3px 6px rgba(0,0,0,0.23);
+			transition: all 0.2s cubic-bezier(.25,.8,.25,.1);
+		
+			animation-duration: .75s;
+			  animation-name: fadeInUp;
+			  transform-origin: center middle;
+		}
+		a {
+			text-decoration: none;
+
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			align-self: center;
+			align-items: flex-end;
+		}
+	</style>
+
+</head>
+<body>
+	
+	<header style="font-family: Lucida Handwriting; color: yellow">
+		<h2>Issues and Problem tracking System | Dev/Ehab Reda</h2><br><br>
+		<a href="/repair">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Home</h3>
+			</section>
+		</a>
+		<a href="/repair/updateRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Update</h3>
+			</section>
+		</a>
+		<a href="/repair/pendingRepairRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Pending</h3>
+			</section>
+		</a>
+		<a href="/repair/checkStatusRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Check</h3>
+			</section>
+		</a>
+	</header>
+	
+		<section class="content" id='content' style="background: url({% static 'img/new.jpg' %}) no-repeat center; background-size: contain;">
+			<section class="formContainer">
+				<form method="post" action="/repair/enquiryReceipt/">
+					{% csrf_token %}
+					<br><br>
+					<h3 style="font-family: gotham rounded book;">Enquiry Form</h3>
+					<br><br>
+					<input type="text" value="Receipt ID : {{ receiptID }}" disabled="disabled" name="receiptID"><br><br>
+					<input type="date" placeholder="Enquiry Date" value="{{ currentDate }}" name="enquiryDate" required><br><br>
+					<input type="text" placeholder="Customer Name" name="customerName" required><br><br>
+					<input type="number" placeholder="Contact Number" min="0" name="contactNo" required><br><br>
+					<textarea placeholder="Station" rows="3" name="address"></textarea><br><br>
+					<br>
+					<center><hr size="2" width="85%" color="#2196f3" noshade></center>
+					<br>
+					<select name="deviceType" placeholder="Device Type" required>
+						<option value="">Device Type</option>
+						<option value="TOM">TOM</option>
+						<option value="PCM">PCM</option>
+					</select><br><br>
+					
+					<input type="text" placeholder="Device Serial Number" name="serialNo">
+					<br><br>
+					<textarea placeholder="Device Condition" rows="3" name="deviceCondition"></textarea><br><br>
+					
+					<br>
+					<br>
+					<center><hr size="2" width="85%" color="#2196f3" noshade></center>
+					<br>
+					<!-- <input type="text" placeholder="Problem Category" name="problemCategory"><br><br> -->
+					<select name="problemCategory" required>
+						<option value="">Problem Category</option>
+						<option value="HW">Hardware</option>
+						<option value="SW">Software</option>
+					</select><br><br>
+					<input type="text" placeholder="Problem" name="problem" required><br><br>
+					<textarea placeholder="Problem Description" rows="3" name="problemDescription"></textarea><br><br>
+					<br>
+					<select name="status" required>
+						<option value="">Problem Status</option>
+						<option value="EN">Enquired</option>
+						<option value="CH">Checked</option>
+						<option value="RE">Repaired</option>
+						<option value="CO">Completed</option>
+						<option value="RJ">Rejected</option>
+					</select><br><br>
+					<center><hr size="2" width="85%" color="#2196f3" noshade></center>
+					<br>
+					
+					
+					<input type="submit" value="Print Receipt"><br><br>
+				</form>
+				
+			</section>
+		</section>
+
+</body>
+
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Issues Tracking System | Ehab Reda</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+	{% load static %}
+	
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+	<link rel="icon" type="image/x-icon" href="{% static 'img/logos.jpg' %}">
+	<style>
+		.card_button{
+			max-width: 100px;
+			min-width: 100px;
+			max-height: 50px;
+			min-height: 50px;
+		
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			align-self: center;
+			align-items: flex-end;
+		
+			padding-bottom: 10px;
+		
+			color: white;
+			background: linear-gradient(45deg,#0601ff,#ffffff);
+		
+			border-radius: 0.3em;
+		
+			box-shadow: 0px 3px 6px rgba(0,0,0,0.16), 0px 3px 6px rgba(0,0,0,0.23);
+			transition: all 0.2s cubic-bezier(.25,.8,.25,.1);
+		
+			animation-duration: .75s;
+			  animation-name: fadeInUp;
+			  transform-origin: center middle;
+		}
+		a {
+			text-decoration: none;
+
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			align-self: center;
+			align-items: flex-end;
+		}
+	</style>
+
+</head>
+<body>
+	
+	<header style="font-family: Lucida Handwriting; color: yellow">
+		<h2>Issues and Problem tracking System | Dev/Ehab Reda</h2><br><br>
+		<a href="/repair">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Home</h3>
+			</section>
+		</a>
+		<a href="/repair/updateRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Update</h3>
+			</section>
+		</a>
+		<a href="/repair/pendingRepairRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Pending</h3>
+			</section>
+		</a>
+		<a href="/repair/checkStatusRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Check</h3>
+			</section>
+		</a>
+	</header>
+	
+		<section class="content" id='content' style="background: url({% static 'img/new.jpg' %}) no-repeat center; background-size: contain;">
+			<section class="formContainer">
+				<form method="post" action="/repair/enquiryReceipt/">
+					{% csrf_token %}
+					<br><br>
+					<h3 style="font-family: gotham rounded book;">Enquiry Form</h3>
+					<br><br>
+					<input type="text" value="Receipt ID : {{ receiptID }}" disabled="disabled" name="receiptID"><br><br>
+					<input type="date" placeholder="Enquiry Date" value="{{ currentDate }}" name="enquiryDate" required><br><br>
+					<input type="text" placeholder="Customer Name" name="customerName" required><br><br>
+					<input type="number" placeholder="Contact Number" min="0" name="contactNo" required><br><br>
+					<textarea placeholder="Station" rows="3" name="address"></textarea><br><br>
+					<br>
+					<center><hr size="2" width="85%" color="#2196f3" noshade></center>
+					<br>
+					<select name="deviceType" placeholder="Device Type" required>
+						<option value="">Device Type</option>
+						<option value="TOM">TOM</option>
+						<option value="PCM">PCM</option>
+					</select><br><br>
+					
+					<input type="text" placeholder="Device Serial Number" name="serialNo">
+					<br><br>
+					<textarea placeholder="Device Condition" rows="3" name="deviceCondition"></textarea><br><br>
+					
+					<br>
+					<br>
+					<center><hr size="2" width="85%" color="#2196f3" noshade></center>
+					<br>
+					<!-- <input type="text" placeholder="Problem Category" name="problemCategory"><br><br> -->
+					<select name="problemCategory" required>
+						<option value="">Problem Category</option>
+						<option value="HW">Hardware</option>
+						<option value="SW">Software</option>
+					</select><br><br>
+					<input type="text" placeholder="Problem" name="problem" required><br><br>
+					<textarea placeholder="Problem Description" rows="3" name="problemDescription"></textarea><br><br>
+					<br>
+					<select name="status" required>
+						<option value="">Problem Status</option>
+						<option value="EN">Enquired</option>
+						<option value="CH">Checked</option>
+						<option value="RE">Repaired</option>
+						<option value="CO">Completed</option>
+						<option value="RJ">Rejected</option>
+					</select><br><br>
+					<center><hr size="2" width="85%" color="#2196f3" noshade></center>
+					<br>
+					
+					
+					<input type="submit" value="Print Receipt"><br><br>
+				</form>
+				
+			</section>
+		</section>
+
+</body>
+
+>>>>>>> 82835c48c97b5622541c6cb9e52efcec4ece4bb2
+</html>

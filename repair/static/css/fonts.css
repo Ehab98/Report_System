@@ -1,0 +1,40 @@
+<<<<<<< HEAD
+@font-face {
+	font-family: "gotham rounded bold";
+	src: url('../fonts/otf/GothamRoundedBold.otf') format("opentype");
+}
+
+@font-face {
+	font-family: "gotham rounded medium";
+	src: url('../fonts/otf/GothamRoundedMedium.otf') format("opentype");
+}
+
+@font-face {
+	font-family: "gotham rounded book";
+	src: url('../fonts/otf/GothamRoundedBook.otf') format("opentype");
+}
+
+@font-face {
+	font-family: "gotham rounded light";
+	src: url('../fonts/otf/GothamRoundedLight.otf') format("opentype");
+=======
+@font-face {
+	font-family: "gotham rounded bold";
+	src: url('../fonts/otf/GothamRoundedBold.otf') format("opentype");
+}
+
+@font-face {
+	font-family: "gotham rounded medium";
+	src: url('../fonts/otf/GothamRoundedMedium.otf') format("opentype");
+}
+
+@font-face {
+	font-family: "gotham rounded book";
+	src: url('../fonts/otf/GothamRoundedBook.otf') format("opentype");
+}
+
+@font-face {
+	font-family: "gotham rounded light";
+	src: url('../fonts/otf/GothamRoundedLight.otf') format("opentype");
+>>>>>>> 82835c48c97b5622541c6cb9e52efcec4ece4bb2
+}

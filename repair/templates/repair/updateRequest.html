@@ -1,0 +1,220 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Issues tracking System | Ehab Reda</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+	{% load static %}
+	
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+	<link rel="icon" type="image/x-icon" href="{% static 'img/logos.jpg' %}">
+	<style>
+		.card_button{
+			max-width: 100px;
+			min-width: 100px;
+			max-height: 50px;
+			min-height: 50px;
+		
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			align-self: center;
+			align-items: flex-end;
+		
+			padding-bottom: 10px;
+		
+			color: white;
+			background: linear-gradient(45deg,#0601ff,#ffffff);
+		
+			border-radius: 0.3em;
+		
+			box-shadow: 0px 3px 6px rgba(0,0,0,0.16), 0px 3px 6px rgba(0,0,0,0.23);
+			transition: all 0.2s cubic-bezier(.25,.8,.25,.1);
+		
+			animation-duration: .75s;
+			  animation-name: fadeInUp;
+			  transform-origin: center middle;
+		}
+		a {
+			text-decoration: none;
+
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			align-self: center;
+			align-items: flex-end;
+		}
+	</style>
+</head>
+style="background: {% static 'img/bg.png' %}; opacity: 0px;"
+<body>
+	<header style="font-family: Lucida Handwriting; color: yellow">
+		<h2>Issues and Problem tracking System | Dev/Ehab Reda</h2><br><br>
+		<a href="/repair">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Home</h3>
+			</section>
+		</a>
+		<a href="/repair/updateRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Update</h3>
+			</section>
+		</a>
+		<a href="/repair/pendingRepairRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Pending</h3>
+			</section>
+		</a>
+		<a href="/repair/checkStatusRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Check</h3>
+			</section>
+		</a>
+	</header>
+		<section class="content" id='content' style="background: url({% static 'img/3.jpg' %}) no-repeat center; background-size: contain;">
+			<section class="formContainer" style="align-self: center;">
+				<br>
+				<h3>Enter Receipt ID</h3><br><br>
+				<form action="/repair/updateForm/" method="POST">
+				    {% csrf_token %}
+				    <input type="hidden" name="requestType" value="receiptID">
+				    <input type="text" name="receiptID" placeholder="Enter Receipt ID" required><br><br>
+				    <input type="submit">
+				</form>
+				<br>
+			</section>
+
+			<section style="align-self: center; margin-top: 100px">
+				<br>
+				<h3>or</h3>
+				<br><br><br><br><br><br>
+			</section>
+
+			<section class="formContainer" style="align-self: center;">
+				<br>
+				<h3>Enter Device Serial Number</h3><br><br>
+				<form action="/repair/updateForm/" method="POST">
+				    {% csrf_token %}
+				    <input type="hidden" name="requestType" value="serialNo">
+				    <input type="text" name="serialNo" placeholder="Enter Device Serial Number" required><br><br>
+				    <input type="submit">
+				</form>
+				<br>
+			</section>
+
+</body>
+
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Issues tracking System | Ehab Reda</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+	{% load static %}
+	
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+	<link rel="icon" type="image/x-icon" href="{% static 'img/logos.jpg' %}">
+	<style>
+		.card_button{
+			max-width: 100px;
+			min-width: 100px;
+			max-height: 50px;
+			min-height: 50px;
+		
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			align-self: center;
+			align-items: flex-end;
+		
+			padding-bottom: 10px;
+		
+			color: white;
+			background: linear-gradient(45deg,#0601ff,#ffffff);
+		
+			border-radius: 0.3em;
+		
+			box-shadow: 0px 3px 6px rgba(0,0,0,0.16), 0px 3px 6px rgba(0,0,0,0.23);
+			transition: all 0.2s cubic-bezier(.25,.8,.25,.1);
+		
+			animation-duration: .75s;
+			  animation-name: fadeInUp;
+			  transform-origin: center middle;
+		}
+		a {
+			text-decoration: none;
+
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			align-self: center;
+			align-items: flex-end;
+		}
+	</style>
+</head>
+style="background: {% static 'img/bg.png' %}; opacity: 0px;"
+<body>
+	<header style="font-family: Lucida Handwriting; color: yellow">
+		<h2>Issues and Problem tracking System | Dev/Ehab Reda</h2><br><br>
+		<a href="/repair">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Home</h3>
+			</section>
+		</a>
+		<a href="/repair/updateRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Update</h3>
+			</section>
+		</a>
+		<a href="/repair/pendingRepairRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Pending</h3>
+			</section>
+		</a>
+		<a href="/repair/checkStatusRequest/">
+			<section class="card_button" style="font-family: Lucida Handwriting; color: yellow;">
+				<h3>Check</h3>
+			</section>
+		</a>
+	</header>
+		<section class="content" id='content' style="background: url({% static 'img/3.jpg' %}) no-repeat center; background-size: contain;">
+			<section class="formContainer" style="align-self: center;">
+				<br>
+				<h3>Enter Receipt ID</h3><br><br>
+				<form action="/repair/updateForm/" method="POST">
+				    {% csrf_token %}
+				    <input type="hidden" name="requestType" value="receiptID">
+				    <input type="text" name="receiptID" placeholder="Enter Receipt ID" required><br><br>
+				    <input type="submit">
+				</form>
+				<br>
+			</section>
+
+			<section style="align-self: center; margin-top: 100px">
+				<br>
+				<h3>or</h3>
+				<br><br><br><br><br><br>
+			</section>
+
+			<section class="formContainer" style="align-self: center;">
+				<br>
+				<h3>Enter Device Serial Number</h3><br><br>
+				<form action="/repair/updateForm/" method="POST">
+				    {% csrf_token %}
+				    <input type="hidden" name="requestType" value="serialNo">
+				    <input type="text" name="serialNo" placeholder="Enter Device Serial Number" required><br><br>
+				    <input type="submit">
+				</form>
+				<br>
+			</section>
+
+</body>
+
+>>>>>>> 82835c48c97b5622541c6cb9e52efcec4ece4bb2
+</html>

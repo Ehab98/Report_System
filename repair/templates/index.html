@@ -1,0 +1,112 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Issues Tracking System | Ehab Reda</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+	{% load static %}
+	
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="icon" type="image/x-icon" href="{% static 'img/logos.jpg' %}">
+	<style type="text/css">
+		.contentLogin{
+			display: flex;
+			flex-wrap: wrap;
+
+			justify-content: space-around;
+
+			text-align: center;
+			align-self: center;
+			align-items: center;
+
+			position: relative;
+
+			min-width: 100%;
+			max-width: 100%;
+			min-height: 100vh;
+			max-height: 100vh;
+			background: #F4F4F4;
+
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<header style="font-family: Lucida Handwriting; color: yellow">
+		<h2>Issues and Problem tracking System | Dev/Ehab Reda</h2>
+	</header>
+
+	<section class="contentLogin" id='content'>
+		<section class="login">
+			<br><br><br>
+			<form method="POST" action="repair/">
+				{% csrf_token %}
+				<input type="text" placeholder="Username" autofocus="autofocus" name="username" required><br><br>
+				<input type="password" placeholder="Password" name="password" required><br><br>
+				<input type="submit" value="Login"><br><br>
+			<br><br><br>
+		</section>
+	</section>
+
+</body>
+
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Issues Tracking System | Ehab Reda</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+	{% load static %}
+	
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="icon" type="image/x-icon" href="{% static 'img/logos.jpg' %}">
+	<style type="text/css">
+		.contentLogin{
+			display: flex;
+			flex-wrap: wrap;
+
+			justify-content: space-around;
+
+			text-align: center;
+			align-self: center;
+			align-items: center;
+
+			position: relative;
+
+			min-width: 100%;
+			max-width: 100%;
+			min-height: 100vh;
+			max-height: 100vh;
+			background: #F4F4F4;
+
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<header style="font-family: Lucida Handwriting; color: yellow">
+		<h2>Issues and Problem tracking System | Dev/Ehab Reda</h2>
+	</header>
+
+	<section class="contentLogin" id='content'>
+		<section class="login">
+			<br><br><br>
+			<form method="POST" action="repair/">
+				{% csrf_token %}
+				<input type="text" placeholder="Username" autofocus="autofocus" name="username" required><br><br>
+				<input type="password" placeholder="Password" name="password" required><br><br>
+				<input type="submit" value="Login"><br><br>
+			<br><br><br>
+		</section>
+	</section>
+
+</body>
+
+>>>>>>> 82835c48c97b5622541c6cb9e52efcec4ece4bb2
+</html>

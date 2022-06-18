@@ -1,0 +1,132 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html>
+<head>
+	<title>إيصال إستلام بعد صيانة (Ecards)</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+	{% load static %}
+	
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/receipt.css' %}">
+
+	<link rel="icon" type="image/x-icon" href="{% static 'img/logos.jpg' %}">
+</head>
+
+<body>
+	<div class="content" style="background: white;">
+		{% for i in customerDetails%}
+		<section class="table">
+			<section class="tableHeader">
+				<figure>
+					&nbsp;
+				</figure>
+				<section style="flex: 3; font-family: Lucida Handwriting; color: yellow">
+					<br>
+					<h1 style="font-size: 31px;	">إيصال إستلام بعد  صيانه </h1>
+					
+					<br>
+				</section>
+			</section>
+			<section style="display: flex; text-align: right; flex-wrap: wrap; padding:4px;">
+				<section style="min-width: 55%; max- width: 55%;">{{ i.receiptID }} <b> :إيصال رقم  </b></u></section>
+				<section style="min-width: 45%; max- width: 45%;">{{ i.enquiryDate }} <b>: التاريخ</b></section>
+				<section style="min-width: 55%; max- width: 55%;"> <b> إسم المسلم : </b>{{ i.customerName }} </section>
+				<section style="min-width: 45%; max- width: 45%;">{{ i.contactNo }} <b> :رقم موبايل المسلم  </b></section>
+				<section style="min-width: 100%; max- width: 100%;">{{ i.deviceType }} <b> :نوع الجهاز    </b></section>
+				<section style="min-width: 100%; max- width: 100%;">{{ i.serialNo }} <b> :رقم الجهاز    </b></section>
+
+				<section style="min-width: 100%; max- width: 100%;"> <b> المشكلة: </b>{{ i.problem }} </section>
+				<section style="min-width: 100%; max- width: 100%;"><b> وصف المشكلة : </b>{{ i.problemDescription }}</section>
+				<section style="min-width: 100%; max- width: 100%;"> <b> حالة الجهاز :</b>{{ i.deviceCondition }}</section>
+			</section>
+			
+			<section class="tableContactDetails" style="text-align: right;">
+				<p ><b>-:برجاء الإنتباه</b></p>
+				
+
+				
+					<b>
+					<p>حامل الإيصال هو من له الحق بإستلام الجهاز *</p>
+					<p>عند إستلام الجهاز تفقده جيداً *</p>
+					<p>رجاءً حافظ على الجهاز بعد الإستلام * </p>
+					<p>إذا كانت هناك أي مشكلة أخرى في جهازك بعد الإصلاح ، فلن نكون مسؤولين عنها *</p>
+				</b>
+				
+			</section>
+			<section style="display: flex; text-align: right; flex-wrap: wrap; padding-bottom:0px; padding-top:50px; justify-content: flex-end;">
+				<section style="min-width: 55%; max- width: 55%;"><b>توقيع المستلم</b></section> <br><br><br><br><br>
+				<section style="min-width: 55%; max- width: 55%;"><b>توقيع المسلم</b></section> <br><br><br><br><br>
+			</section>
+		</section>
+		{% endfor %}
+	</div>
+</body>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<title>إيصال إستلام بعد صيانة (Ecards)</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+	{% load static %}
+	
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/receipt.css' %}">
+
+	<link rel="icon" type="image/x-icon" href="{% static 'img/logos.jpg' %}">
+</head>
+
+<body>
+	<div class="content" style="background: white;">
+		{% for i in customerDetails%}
+		<section class="table">
+			<section class="tableHeader">
+				<figure>
+					&nbsp;
+				</figure>
+				<section style="flex: 3; font-family: Lucida Handwriting; color: yellow">
+					<br>
+					<h1 style="font-size: 31px;	">إيصال إستلام بعد  صيانه </h1>
+					
+					<br>
+				</section>
+			</section>
+			<section style="display: flex; text-align: right; flex-wrap: wrap; padding:4px;">
+				<section style="min-width: 55%; max- width: 55%;">{{ i.receiptID }} <b> :إيصال رقم  </b></u></section>
+				<section style="min-width: 45%; max- width: 45%;">{{ i.enquiryDate }} <b>: التاريخ</b></section>
+				<section style="min-width: 55%; max- width: 55%;"> <b> إسم المسلم : </b>{{ i.customerName }} </section>
+				<section style="min-width: 45%; max- width: 45%;">{{ i.contactNo }} <b> :رقم موبايل المسلم  </b></section>
+				<section style="min-width: 100%; max- width: 100%;">{{ i.deviceType }} <b> :نوع الجهاز    </b></section>
+				<section style="min-width: 100%; max- width: 100%;">{{ i.serialNo }} <b> :رقم الجهاز    </b></section>
+
+				<section style="min-width: 100%; max- width: 100%;"> <b> المشكلة: </b>{{ i.problem }} </section>
+				<section style="min-width: 100%; max- width: 100%;"><b> وصف المشكلة : </b>{{ i.problemDescription }}</section>
+				<section style="min-width: 100%; max- width: 100%;"> <b> حالة الجهاز :</b>{{ i.deviceCondition }}</section>
+			</section>
+			
+			<section class="tableContactDetails" style="text-align: right;">
+				<p ><b>-:برجاء الإنتباه</b></p>
+				
+
+				
+					<b>
+					<p>حامل الإيصال هو من له الحق بإستلام الجهاز *</p>
+					<p>عند إستلام الجهاز تفقده جيداً *</p>
+					<p>رجاءً حافظ على الجهاز بعد الإستلام * </p>
+					<p>إذا كانت هناك أي مشكلة أخرى في جهازك بعد الإصلاح ، فلن نكون مسؤولين عنها *</p>
+				</b>
+				
+			</section>
+			<section style="display: flex; text-align: right; flex-wrap: wrap; padding-bottom:0px; padding-top:50px; justify-content: flex-end;">
+				<section style="min-width: 55%; max- width: 55%;"><b>توقيع المستلم</b></section> <br><br><br><br><br>
+				<section style="min-width: 55%; max- width: 55%;"><b>توقيع المسلم</b></section> <br><br><br><br><br>
+			</section>
+		</section>
+		{% endfor %}
+	</div>
+</body>
+>>>>>>> 82835c48c97b5622541c6cb9e52efcec4ece4bb2
+</html>
